@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mis Videos</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h2 {
+  cursor: pointer;
+  margin: 10px 0;
+  color: #00ffcc;
+}
+
+video {
+  display: none;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+</style>
+</head>
+<body>
+
+<h1>Mis Videos</h1>
+
+<!-- Video 1 -->
+<h2 onclick="mostrarVideo('video1')">Título Video 1</h2>
+<video id="video1" controls>
+  <source src="video1.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+
+<!-- Video 2 -->
+<h2 onclick="mostrarVideo('video2')">Título Video 2</h2>
+<video id="video2" controls>
+  <source src="video2.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+
+<!-- Video 3 -->
+<h2 onclick="mostrarVideo('video3')">Título Video 3</h2>
+<video id="video3" controls>
+  <source src="video3.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+
+<!-- Video 4 -->
+<h2 onclick="mostrarVideo('video4')">Título Video 4</h2>
+<video id="video4" controls>
+  <source src="video4.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+
+<!-- Video 5 -->
+<h2 onclick="mostrarVideo('video5')">Título Video 5</h2>
+<video id="video5" controls>
+  <source src="video5.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+
+<script>
+function mostrarVideo(id) {
+  // Ocultar todos los videos
+  const videos = document.querySelectorAll('video');
+  videos.forEach(v => v.style.display = 'none');
+
+  // Mostrar solo el seleccionado
+  const v = document.getElementById(id);
+  v.style.display = 'block';
+  v.scrollIntoView({behavior: "smooth"});
+}
+</script>
+
+</body>
+</html>
